@@ -90,7 +90,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['site/user']);
         } else {
             $model->password = '';
 
@@ -162,6 +162,17 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    /**
+     * Displays user page.
+     *
+     * @return mixed
+     */
+    public function actionUser()
+    {
+        return $this->render('user');
+    }
+
 
     /**
      * Requests password reset.

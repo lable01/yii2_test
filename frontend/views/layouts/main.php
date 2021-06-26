@@ -43,7 +43,12 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
+    }
+//    elseif (Yii::$app->user->identity) {
+//
+//    }
+    else {
+        $menuItems[] = ['label' => 'User', 'url' => ['/site/user']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
