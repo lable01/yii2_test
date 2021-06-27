@@ -15,6 +15,7 @@ class SignupForm extends Model
     public $user_patronymic;
     public $email;
     public $user_birth_date;
+    public $creation_date;
     public $password;
 
 
@@ -61,6 +62,7 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->user_surname = $this->user_surname;
         $user->user_birth_date = $this->user_birth_date;
+        $user->creation_date = date('Y-m-d');
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();

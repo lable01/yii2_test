@@ -92,7 +92,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['site/user']);
+            return $this->redirect(['site/index']);
         } else {
             $model->password = '';
 
@@ -170,14 +170,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionUser()
+    public function actionProfile()
     {
-//        $user = new User();
-//        $user->username = 'name';
-//        $user->user_surname = 'surname';
-//        $user->save();
+        $user = new User();
 
-        return $this->render('user');
+        return $this->render('profile');
     }
 
     /**
