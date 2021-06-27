@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -14,6 +15,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\User;
 
 /**
  * Site controller
@@ -170,9 +172,13 @@ class SiteController extends Controller
      */
     public function actionUser()
     {
+//        $user = new User();
+//        $user->username = 'name';
+//        $user->user_surname = 'surname';
+//        $user->save();
+
         return $this->render('user');
     }
-
 
     /**
      * Requests password reset.
@@ -227,8 +233,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {

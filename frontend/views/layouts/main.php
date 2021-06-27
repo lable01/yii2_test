@@ -42,11 +42,10 @@ AppAsset::register($this);
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Login for user', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Login for admin', 'url' => ['']];
+
     }
-//    elseif (Yii::$app->user->identity) {
-//
-//    }
     else {
         $menuItems[] = ['label' => 'User', 'url' => ['/site/user']];
         $menuItems[] = '<li>'
