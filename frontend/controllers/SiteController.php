@@ -172,8 +172,6 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-        $user = new User();
-
         return $this->render('profile');
     }
 
