@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 ?>
 <div class="site-login">
-    <p>Если вы не администратор пройдите по <a href="../../../frontend/web">ссылке</a></p>
+    <a href="../../../frontend/web" class="btn btn-info">На главную</a>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to login:</p>
